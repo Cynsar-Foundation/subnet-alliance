@@ -29,12 +29,12 @@
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-landing-page#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.1",
-    "gatsby": "^4.2.0",
-    "gatsby-plugin-manifest": "^4.4.0",
-    "gatsby-source-contentful": "^7.2.0",
+    "gatsby": "^5.12.9",
+    "gatsby-plugin-manifest": "^5.12.3",
+    "gatsby-source-contentful": "^7.23.1",
     "gatsby-theme-landing-page": "1.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "chalk": "^4.0.0",
