@@ -1,3 +1,33 @@
+const path = require(`path`);
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const result = await graphql(`
+    query {
+      allContentfulBlog {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+  if (result.errors) {
+    throw result.errors;
+  }
+  result.data.allContentfulBlog.edges.forEach(({ node }) => {
+    createPage({
+      path: `/blog/${node.slug}`,
+      component: path.resolve(
+        `./gatsby-theme-landing-page/src/components/blog-post.js`
+      ),
+      context: {
+        slug: node.slug,
+      },
+    });
+  });
+};
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
